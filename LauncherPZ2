@@ -1,0 +1,247 @@
+from tkinter import *import subprocess
+from winreg import *
+
+
+# Botão Jogar
+def jogar():
+menu.destroy()
+subprocess.call("main.exe", shell=True)
+
+
+# Botão Nome
+def nome():
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "ID", 0, REG_SZ, nick.get())
+CloseKey(key)
+
+
+def musicaON():
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "MusicOnOFF", 0, REG_DWORD, 1)
+CloseKey(key)
+
+
+def musicaOFF():
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "MusicOnOFF", 0, REG_DWORD, 0)
+CloseKey(key)
+
+
+def linEng():
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "LangSelection", 0, REG_SZ, 'Eng')
+CloseKey(key)
+
+
+def linPor():
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "LangSelection", 0, REG_SZ, 'Por')
+CloseKey(key)
+
+
+def linSpn():
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "LangSelection", 0, REG_SZ, 'Spn')
+CloseKey(key)
+
+
+def sonOff():
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "VolumeLevel", 0, REG_DWORD, 0)
+CloseKey(key)
+
+
+def sonOn():
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "VolumeLevel", 0, REG_DWORD, 1)
+CloseKey(key)
+
+
+def janelaOFF():
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, 'WindowMode', 0, REG_DWORD, 0)
+CloseKey(key)
+
+
+def janelaON():
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "WindowMode", 0, REG_DWORD, 1)
+CloseKey(key)
+
+
+def Resoluções():
+vresolução = res.get()
+if vresolução == 0:
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "Resolution", 0, REG_DWORD, 0)
+CloseKey(key)
+elif vresolução == 1:
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "Resolution", 0, REG_DWORD, 1)
+CloseKey(key)
+elif vresolução == 2:
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "Resolution", 0, REG_DWORD, 2)
+CloseKey(key)
+elif vresolução == 3:
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "Resolution", 0, REG_DWORD, 3)
+CloseKey(key)
+elif vresolução == 4:
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "Resolution", 0, REG_DWORD, 4)
+CloseKey(key)
+elif vresolução == 5:
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "Resolution", 0, REG_DWORD, 5)
+CloseKey(key)
+elif vresolução == 6:
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "Resolution", 0, REG_DWORD, 6)
+CloseKey(key)
+elif vresolução == 7:
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "Resolution", 0, REG_DWORD, 7)
+CloseKey(key)
+else:
+keyVal = r'Software\Webzen\Mu\Config'
+try:
+key = OpenKey(HKEY_CURRENT_USER, keyVal, 0, KEY_ALL_ACCESS)
+except:
+key = CreateKey(HKEY_CURRENT_USER, keyVal)
+SetValueEx(key, "Resolution", 0, REG_DWORD, 8)
+CloseKey(key)
+
+
+# Layout
+menu = Tk()
+menu.geometry('400x600+650+150')
+menu.title('Launcher PerfectZone')
+menu.iconbitmap(default='img\\ico.ico')
+menu.resizable(False, False)
+
+# Foto PZ
+logo = PhotoImage(file='img\\logo.png')
+logoposição = Label(menu, image=logo).place(width=400, height=780, x=0, y=135)
+
+# Credito
+cred = Label(menu, text='By kingrox').place(x=330, y=570)
+
+# Campo de nickName
+LabelFrame(menu, text='Nome').place(width=140, height=55, x=15, y=10)
+nick = Entry(menu)
+nick.place(width=80, height=20, x=25, y=30)
+Button(menu, text='Salvar', command=nome).place(width=40, height=25, x=110, y=27)
+
+# Botão Jogar
+Button(menu, text='JOGAR', command=jogar).place(width=180, height=50, x=190, y=16)
+
+
+# Botão Idioma
+LabelFrame(menu, text='Selecione o idioma').place(width=370, height=65, x=15, y=80)
+Button(menu, text='Português', command=linPor).place(width=100, height=30, x=27, y=100)
+Button(menu, text='Espanhol', command=linSpn).place(width=100, height=30, x=147, y=100)
+Button(menu, text='Inglês', command=linEng).place(width=100, height=30, x=267, y=100)
+
+# Resoluções
+res = IntVar()
+LabelFrame(menu, text='Selecione a resolução!').place(width=370, height=85, x=15, y=155)
+r = Radiobutton(menu, text='640x480', value=0, variable=res, command=Resoluções).place(width=70, height=30, x=16, y=175)
+r1 = Radiobutton(menu, text='800x600', value=1, variable=res, command=Resoluções).place(width=70, height=30, x=85, y=175)
+r2 = Radiobutton(menu, text='1024x768', value=2, variable=res, command=Resoluções).place(width=70, height=30, x=155, y=175)
+r3 = Radiobutton(menu, text='1280x1024', value=3, variable=res, command=Resoluções).place(width=70, height=30, x=230, y=175)
+r4 = Radiobutton(menu, text='1360x768', value=4, variable=res, command=Resoluções).place(width=70, height=30, x=310, y=175)
+r5 = Radiobutton(menu, text='1440x900', value=5, variable=res, command=Resoluções).place(width=70, height=30, x=50, y=205)
+r6 = Radiobutton(menu, text='1600x900', value=6, variable=res, command=Resoluções).place(width=70, height=30, x=125, y=205)
+r7 = Radiobutton(menu, text='1680x1050', value=7, variable=res, command=Resoluções).place(width=72, height=30, x=200, y=205)
+r8 = Radiobutton(menu, text='1920x1080', value=8, variable=res, command=Resoluções).place(width=72, height=30, x=275, y=205)
+
+# Botão de Som
+LabelFrame(menu, text='Ativar e desativar o som!').place(width=370, height=65, x=15, y=250)
+Button(menu, text='Som (ON)', command=sonOn).place(width=140, height=30, x=45, y=270)
+Button(menu, text='Som (OFF)', command=sonOff).place(width=140, height=30, x=205, y=270)
+
+# Botão de Música
+LabelFrame(menu, text='Ativar e desativar a música!').place(width=370, height=65, x=15, y=325)
+musicaOn = Button(menu, text='Música (ON)', command=musicaON).place(width=140, height=30, x=45, y=345)
+musicaOff = Button(menu, text='Música (OFF)', command=musicaOFF).place(width=140, height=30, x=205, y=345)
+
+# Botão de Janela
+LabelFrame(menu, text='Ativar e desativar modo janela').place(width=370, height=65, x=15, y=400)
+Button(menu, text='Janela (ON)', command=janelaON).place(width=140, height=30, x=45, y=425)
+Button(menu, text='Janela (OFF)', command=janelaOFF).place(width=140, height=30, x=205, y=425)
+
+
+menu.mainloop()
